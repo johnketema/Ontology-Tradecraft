@@ -1,0 +1,30 @@
+@prefix : <http://project2.org/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://project2.org/ontology/instances>
+    a owl:Ontology ;
+    owl:imports <modules/bfo.owl>
+    rdfs:comment "Instances for Project 2, defining fundamental classes and properties."@en ;
+    rdfs:label "Airplane Specification Ontology Instances"@en ;
+    owl:versionInfo "1.0.0" .
+
+# Task 1 compliant instances
+
+:Airbus a :Manufacturer ;
+    rdfs:label "Airbus"@en ;
+    skos:definition "A European multinational aerospace corporation that designs, manufactures, and sells civil and military aeronautical products worldwide." .
+
+:Airbus_A320_NEO_Spec a :Artifact_Design ;
+    rdfs:label "Airbus A320 NEO Specification"@en ;
+    skos:definition "A detailed description of the characteristics and features of the Airbus A320 NEO jet" ;
+    :is_about only :has_continuant_part exactly 2 :Jet_Engine, 
+        :has_Length_Ft 123.3^^xsd:decimal, 
+        :has_Tail_HeightFt 45.6^^xsd:decimal,
+        :has_Model_BADA "BADA 4.2"^^xsd:string,
+        :has_Model_FAA "FAA 14 CFR Part 25"^^xsd:string .
+        :has_Airplane_Class :Fixed_Wing .
+        :has_Manufacturer :Airbus .
+

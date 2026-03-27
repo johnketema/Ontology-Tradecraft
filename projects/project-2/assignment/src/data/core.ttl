@@ -1,0 +1,112 @@
+@prefix : <http://project2.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix RDF: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix RDFS: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix BFO: <http://purl.obolibrary.org/obo/BFO_> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://project2.org/ontology/core>
+    a owl:Ontology ;
+    owl:imports <modules/bfo.owl>
+    rdfs:comment "Core ontology for Project 2, defining fundamental classes and properties."@en ;
+    rdfs:label "Airplane Specification Ontology"@en ;
+    owl:versionInfo "1.0.0" .
+
+:Airplane a owl:Class ;
+    rdfs:label "Airplane"@en ;
+    skos:definition "A powered, heavier-than-air aircraft with fixed wings that generates lift through forward motion." .
+    rdfs:subClassOf BFO:0000015 .  # BFO:0000015 represents 'Object'
+    rdfs:subClassOf [
+        a owl:ObjectProperty ;
+        
+    ]
+
+# Task 1 - include Artifact Design, Jet Engine, Fixed Wing, has continuant part, has Model BADA, has Model FAA, has Length Ft, has Tail HeightFt, is about
+
+:Artifact_Design a owl:Class ;
+    rdfs:label "Artifact Design"@en ;
+    skos:definition "A detailed description of the characteristics and features of an artifact." .
+    rdfs:subClassOf BFO:0000031 .  # BFO:0000031 represents 'Generically Dependent Continuant'
+
+:is_about a owl:ObjectProperty ;
+    rdfs:label "is about"@en ;
+    skos:definition "Relates an information content entity to the entity it is about." ;
+    rdfs:domain :Artifact_Design ;
+    rdfs:range :Airplane .
+
+:Jet_Engine a owl:Class ;
+    rdfs:label "Jet Engine"@en ;
+    skos:definition "A type of reaction engine that discharges a fast-moving jet of fluid to generate thrust in accordance with Newton's third law of motion." .
+    rdfs:subClassOf BFO:0000040 .  # BFO:0000040 represents 'Material Entity'
+
+:has_continuant_part a owl:ObjectProperty ;
+    rdfs:label "has continuant part"@en ;
+    skos:definition "Relates an entity to its continuant parts." ;
+    rdfs:domain :Airplane ;
+    rdfs:range BFO:0000002 .  # BFO:0000002 represents 'Continuant' 
+
+:Airplane_Class a owl:Class ;
+    rdfs:label "Airplane Class"@en ;
+    skos:definition "A category of airplanes based on shared characteristics or features." .
+    rdfs:subClassOf BFO:0000040 .  # BFO:0000040 represents 'Material Entity'
+
+:Fixed_Wing a owl:Class ;
+    rdfs:label "Fixed Wing"@en ;
+    skos:definition "An aircraft that has a wing that is rigid and does not move relative to the main body of the aircraft." .
+    rdfs:subClassOf :Airplane_Class .
+
+:has_Airplane_Class a owl:ObjectProperty ;
+    rdfs:label "has Airplane Class"@en ;
+    skos:definition "Relates an airplane to the class of airplane it is" ;
+    rdfs:domain :Airplane ;
+    rdfs:range :Airplane_Class .
+
+:has_Model_BADA a owl:ObjectProperty ;
+    rdfs:label "has Model BADA"@en ;
+    skos:definition "Relates an airplane to its BADA model." ;
+    rdfs:domain :Airplane ;
+    rdfs:range :BADA_Model .
+
+:has_Length_Ft a owl:DatatypeProperty ;
+    rdfs:label "has Length Ft"@en ;
+    skos:definition "The length of an airplane in feet." ;
+    rdfs:domain :Airplane ;
+    rdfs:range xsd:float .
+
+:has_Tail_HeightFt a owl:DatatypeProperty ;
+    rdfs:label "has Tail Height Ft"@en ;
+    skos:definition "The tail height of an airplane in feet." ;
+    rdfs:domain :Airplane ;
+    rdfs:range xsd:float .
+
+:BADA_Model a owl:Class ;
+    rdfs:label "BADA Model"@en ;
+    skos:definition "A model of an airplane based on the Base of Aircraft Data (BADA) developed by EUROCONTROL." .
+    rdfs:subClassOf BFO:0000031 .  # BFO:0000031 represents 'Generically Dependent Continuant'
+
+:FAA_Model a owl:Class ;
+    rdfs:label "FAA Model"@en ;
+    skos:definition "A model of an airplane based on the Federal Aviation Administration (FAA) standards." .
+    rdfs:subClassOf BFO:0000031 .  # BFO:0000031 represents 'Generically Dependent Continuant'
+
+:has_Model_FAA a owl:ObjectProperty ;
+    rdfs:label "has Model FAA"@en ;
+    skos:definition "Relates an airplane to its FAA model." ;
+    rdfs:domain :Airplane ;
+    rdfs:range :FAA_Model .
+
+:Manufacturer a owl:Class ;
+    rdfs:label "Manufacturer"@en ;
+    skos:definition "An organization that produces airplanes." .
+    rdfs:subClassOf BFO:0000002 .  # BFO:0000002 represents 'Continuant'
+
+:has_Manufacturer a owl:ObjectProperty ;
+    rdfs:label "has Manufacturer"@en ;
+    skos:definition "Relates an airplane to its manufacturer." ;
+    rdfs:domain :Airplane ;
+    rdfs:range :Manufacturer .
+
+
+
+
