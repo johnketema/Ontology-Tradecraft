@@ -10,7 +10,7 @@
 
 <http://project2.org/ontology/core>
     a owl:Ontology ;
-    owl:imports <modules/bfo.owl> ;
+    owl:imports <http://purl.obolibrary.org/obo/bfo/2020/bfo-core.owl> ;
     rdfs:comment "Core ontology for Project 2, defining fundamental classes and properties."^^xsd:string ;
     rdfs:label "Airplane Specification Ontology"^^xsd:string ;
     owl:versionInfo "1.0.0"^^xsd:string .
@@ -18,8 +18,7 @@
 :Airplane a owl:Class ;
     rdfs:label "Airplane"^^xsd:string ;
     skos:definition "A powered, heavier-than-air aircraft with fixed wings that generates lift through forward motion."^^xsd:string ;
-    rdfs:subClassOf BFO:0000015 .  # BFO:0000015 represents 'Object'
-    
+    rdfs:subClassOf BFO:0000040 .  # BFO:0000040 represents 'Material Entity'    
 
 # Task 1 - include Artifact Design, Jet Engine, Fixed Wing, has continuant part, has Model BADA, has Model FAA, has Length Ft, has Tail HeightFt, is about
 
@@ -71,13 +70,13 @@
     rdfs:label "has Length Ft"^^xsd:string ;
     skos:definition "The length of an airplane in feet."^^xsd:string ;
     rdfs:domain :Airplane ;
-    rdfs:range xsd:float .
+    rdfs:range xsd:decimal .
 
 :has_Tail_HeightFt a owl:DatatypeProperty ;
     rdfs:label "has Tail Height Ft"^^xsd:string ;
     skos:definition "The tail height of an airplane in feet."^^xsd:string ;
     rdfs:domain :Airplane ;
-    rdfs:range xsd:float .
+    rdfs:range xsd:decimal .
 
 :has_Model_FAA a owl:DatatypeProperty ;
     rdfs:label "has Model FAA"^^xsd:string ;
