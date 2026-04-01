@@ -3,28 +3,42 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
 
 <http://project2.org/ontology/instances>
     a owl:Ontology ;
-    owl:imports <modules/bfo.owl>
-    rdfs:comment "Instances for Project 2, defining fundamental classes and properties."@en ;
-    rdfs:label "Airplane Specification Ontology Instances"@en ;
+    owl:imports <modules/bfo.owl> ;
+    rdfs:comment "Instances for Project 2, defining fundamental classes and properties."^^xsd:string ;
+    rdfs:label "Airplane Specification Ontology Instances"^^xsd:string ;
     owl:versionInfo "1.0.0" .
 
 # Task 1 compliant instances
 
 :Airbus a :Manufacturer ;
-    rdfs:label "Airbus"@en ;
-    skos:definition "A European multinational aerospace corporation that designs, manufactures, and sells civil and military aeronautical products worldwide." .
+    rdfs:label "Airbus"^^xsd:string ;
+    skos:definition "A European multinational aerospace corporation that designs, manufactures, and sells civil and military aeronautical products worldwide."^^xsd:string .
+
+:Jet_Engine_1 a :Jet_Engine ;
+    rdfs:label "CFM International LEAP-1A"^^xsd:string ;
+    skos:definition "A high-bypass turbofan engine developed by CFM International, used in the Airbus A320 NEO family."^^xsd:string .
+
+:Jet_Engine_2 a :Jet_Engine ;
+    rdfs:label "CFM International LEAP-1A"^^xsd:string ;
+    skos:definition "A high-bypass turbofan engine developed by CFM International, used in the Airbus A320 NEO family."^^xsd:string .
 
 :Airbus_A320_NEO_Spec a :Artifact_Design ;
-    rdfs:label "Airbus A320 NEO Specification"@en ;
-    skos:definition "A detailed description of the characteristics and features of the Airbus A320 NEO jet" ;
-    :is_about only :has_continuant_part exactly 2 :Jet_Engine, 
-        :has_Length_Ft 123.3^^xsd:decimal, 
-        :has_Tail_HeightFt 45.6^^xsd:decimal,
-        :has_Model_BADA "BADA 4.2"^^xsd:string,
-        :has_Model_FAA "FAA 14 CFR Part 25"^^xsd:string .
-        :has_Airplane_Class :Fixed_Wing .
-        :has_Manufacturer :Airbus .
+    rdfs:label "Airbus A320 NEO Specification"^^xsd:string ;
+    skos:definition "A detailed description of the characteristics and features of the Airbus A320 NEO jet"^^xsd:string ;
+    :is_about :Airbus_A320_NEO .
 
+:Airbus_A320_NEO a :Fixed_Wing ;
+    rdfs:label "Airbus A320 NEO"^^xsd:string ;
+    skos:definition "A member of the Airbus A320 family of aircraft, featuring new engine options and improved aerodynamics for enhanced fuel efficiency."^^xsd:string ;
+    :has_continuant_part :Jet_Engine_1, :Jet_Engine_2 ;
+    :has_Model_BADA "BADA 4.2"^^xsd:string ;
+    :has_Model_FAA "FAA Type Certificate A16NM"^^xsd:string ;
+    :has_Length_Ft 123.3^^xsd:decimal ;
+    :has_Tail_HeightFt 38.7^^xsd:decimal ;
+    :has_Airplane_Class :Fixed_Wing ;
+    :has_Manufacturer :Airbus .
