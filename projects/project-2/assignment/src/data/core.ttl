@@ -22,6 +22,18 @@
 
 # Task 1 - include Artifact Design, Jet Engine, Fixed Wing, has continuant part, has Model BADA, has Model FAA, has Length Ft, has Tail HeightFt, is about
 
+BFO:0000040 a owl:Class ;
+    rdfs:label "material entity"^^xsd:string ;
+    skos:definition "An entity that has some portion of matter as part."^^xsd:string .
+
+BFO:0000031 a owl:Class ;
+    rdfs:label "generically dependent continuant"^^xsd:string ;
+    skos:definition "An entity that depends generically on another entity."^^xsd:string .
+
+BFO:0000015 a owl:Class ;
+    rdfs:label "process"^^xsd:string ;
+    skos:definition "A temporal entity that unfolds over time."^^xsd:string .
+
 :Artifact_Design a owl:Class ;
     rdfs:label "Artifact Design"^^xsd:string ;
     skos:definition "A detailed description of the characteristics and features of an artifact."^^xsd:string ;

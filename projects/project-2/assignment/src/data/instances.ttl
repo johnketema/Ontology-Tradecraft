@@ -8,7 +8,7 @@
 
 <http://project2.org/ontology/instances>
     a owl:Ontology ;
-    owl:imports <modules/bfo.owl> ;
+    owl:imports <http://purl.obolibrary.org/obo/bfo/2020/bfo-core.owl> ;
     rdfs:comment "Instances for Project 2, defining fundamental classes and properties."^^xsd:string ;
     rdfs:label "Airplane Specification Ontology Instances"^^xsd:string ;
     owl:versionInfo "1.0.0"^^xsd:string .
