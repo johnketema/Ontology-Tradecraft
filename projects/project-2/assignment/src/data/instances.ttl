@@ -11,7 +11,7 @@
     owl:imports <modules/bfo.owl> ;
     rdfs:comment "Instances for Project 2, defining fundamental classes and properties."^^xsd:string ;
     rdfs:label "Airplane Specification Ontology Instances"^^xsd:string ;
-    owl:versionInfo "1.0.0" .
+    owl:versionInfo "1.0.0"^^xsd:string .
 
 # Task 1 compliant instances
 
@@ -38,7 +38,7 @@
     :has_continuant_part :Jet_Engine_1, :Jet_Engine_2 ;
     :has_Model_BADA "BADA 4.2"^^xsd:string ;
     :has_Model_FAA "FAA Type Certificate A16NM"^^xsd:string ;
-    :has_Length_Ft 123.3^^xsd:decimal ;
-    :has_Tail_HeightFt 38.7^^xsd:decimal ;
+    :has_Length_Ft "123.3"^^xsd:decimal ;
+    :has_Tail_HeightFt "38.7"^^xsd:decimal ;
     :has_Airplane_Class :Fixed_Wing ;
     :has_Manufacturer :Airbus .
