@@ -21,6 +21,9 @@
     rdfs:subClassOf BFO:0000040 .  # BFO:0000040 represents 'Material Entity'    
 
 # Task 1 - include Artifact Design, Jet Engine, Fixed Wing, has continuant part, has Model BADA, has Model FAA, has Length Ft, has Tail HeightFt, is about
+BFO:0000015 a owl:Class ;
+    rdfs:label "process"^^xsd:string ;
+    skos:definition "A temporal entity that unfolds over time."^^xsd:string .
 
 BFO:0000040 a owl:Class ;
     rdfs:label "material entity"^^xsd:string ;
@@ -41,9 +44,7 @@ BFO:0000015 a owl:Class ;
 
 :is_about a owl:ObjectProperty ;
     rdfs:label "is about"^^xsd:string ;
-    skos:definition "Relates an information content entity to the entity it is about."^^xsd:string ;
-    rdfs:domain :Artifact_Design ;
-    rdfs:range :Airplane .
+    skos:definition "Relates an information content entity to the entity it is about."^^xsd:string .
 
 :Jet_Engine a owl:Class ;
     rdfs:label "Jet Engine"^^xsd:string ;
@@ -106,3 +107,41 @@ BFO:0000015 a owl:Class ;
     skos:definition "Relates an airplane to its manufacturer."^^xsd:string ;
     rdfs:domain :Airplane ;
     rdfs:range :Manufacturer .
+
+
+# Task 2 - include `Test Process`, `is temporal part of`, `is measurement unit of`, `prescribes`, `Measurement Unit`
+:Test_Process a owl:Class ;
+    rdfs:label "Test Process"^^xsd:string ;
+    skos:definition "A process carried out to evaluate the performance characteristics of an aircraft."^^xsd:string ;
+    rdfs:subClassOf BFO:0000015 .   # BFO:0000015 represents 'Process'
+
+:is_temporal_part_of a owl:ObjectProperty ;
+    rdfs:label "is temporal part of"^^xsd:string ;
+    skos:definition "Relates a process to the larger process of which it is a temporal part."^^xsd:string ;
+    rdfs:domain BFO:0000015 ; # BFO:0000015 represents 'Process'
+    rdfs:range BFO:0000015 .  
+
+:Approach_Measurement a owl:Class ;
+    rdfs:label "Approach Measurement"^^xsd:string ;
+    skos:definition "A specific type of test process that measures the approach performance of an aircraft."^^xsd:string ;
+    rdfs:subClassOf BFO:0000015 . # BFO:0000015 represents 'Process'
+
+:Measurement_Unit a owl:Class ;
+    rdfs:label "Measurement Unit"^^xsd:string ;
+    skos:definition "A standard unit of measurement used to quantify properties of an aircraft."^^xsd:string ;
+    rdfs:subClassOf BFO:0000031 .  # BFO:0000031 represents 'Generically Dependent Continuant'
+
+:is_measurement_unit_of a owl:ObjectProperty ;
+    rdfs:label "is measurement unit of"^^xsd:string ;
+    skos:definition "Relates a measurement unit to the property it measures."^^xsd:string ;
+    rdfs:domain :Measurement_Unit ;
+    rdfs:range :Approach_Measurement .
+
+:prescribes a owl:ObjectProperty ;
+    rdfs:label "prescribes"^^xsd:string ;
+    skos:definition "Relates specifications to the test process results they prescribe."^^xsd:string ;
+    rdfs:domain :Artifact_Design ;
+    rdfs:range :Approach_Measurement .
+
+
+

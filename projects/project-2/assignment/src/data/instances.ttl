@@ -42,3 +42,68 @@
     :has_Tail_HeightFt "38.7"^^xsd:decimal ;
     :has_Airplane_Class :Fixed_Wing ;
     :has_Manufacturer :Airbus .
+
+# Task 2 compliant instances
+
+:Airbus_A321_111 a :Fixed_Wing ;
+    rdfs:label "Airbus A321-111"^^xsd:string ;
+    skos:definition "A specific variant of the Airbus A321, featuring a single-aisle design and optimized for short to medium-haul flights."^^xsd:string .
+
+:Airbus_A321_111_Spec a :Artifact_Design ;
+    rdfs:label "Airbus A321-111 Specification"^^xsd:string ;
+    skos:definition "A detailed description of the characteristics and features of the Airbus A321 jet"^^xsd:string ;
+    :is_about :Airbus_A321_111 .
+
+:Test_Process_1 a :Test_Process ;
+    rdfs:label "Airbus A320 NEO Approach Performance Test"^^xsd:string ;
+    skos:definition "A test process designed to evaluate the approach performance of the Airbus A320 NEO under specific conditions."^^xsd:string .
+
+:Knot a :Measurement_Unit ;
+    rdfs:label "Knot"^^xsd:string ;
+    skos:definition "A unit of speed equal to one nautical mile per hour, commonly used in aviation."^^xsd:string ;
+    :is_measurement_unit_of :Approach_Measurement_139_1 ;
+    :is_measurement_unit_of :Approach_Measurement_139_2 ;
+    :is_measurement_unit_of :Approach_Measurement_139_3 ;
+    :is_measurement_unit_of :Approach_Measurement_139_4 ;
+    :is_measurement_unit_of :Approach_Measurement_139_5 ;
+    :is_measurement_unit_of :Approach_Measurement_142 .
+
+:Approach_Measurement_142 a :Approach_Measurement ;
+    rdfs:label "Approach Measurement 142"^^xsd:string ;
+    skos:definition "A specific approach measurement test process for the Airbus A320 NEO, measuring approach performance under defined conditions."^^xsd:string ;
+    rdf:value "142"^^xsd:integer .
+
+:Approach_Measurement_139_1 a :Approach_Measurement ;
+    rdfs:label "Approach Measurement 139"^^xsd:string ;
+    skos:definition "A specific approach measurement test process for the Airbus A320 NEO, measuring approach performance under defined conditions."^^xsd:string ;
+    rdf:value "139"^^xsd:integer ;
+    :is_temporal_part_of :Test_Process_1 .
+
+:Approach_Measurement_139_2 a :Approach_Measurement ;
+    rdfs:label "Approach Measurement 139"^^xsd:string ;
+    skos:definition "A specific approach measurement test process for the Airbus A320 NEO, measuring approach performance under defined conditions."^^xsd:string ;
+    rdf:value "139"^^xsd:integer ;
+    :is_temporal_part_of :Test_Process_1 .
+
+:Approach_Measurement_139_3 a :Approach_Measurement ;
+    rdfs:label "Approach Measurement 139"^^xsd:string ;
+    skos:definition "A specific approach measurement test process for the Airbus A320 NEO, measuring approach performance under defined conditions."^^xsd:string ;
+    rdf:value "139"^^xsd:integer ;
+    :is_temporal_part_of :Test_Process_1 .
+
+:Approach_Measurement_139_4 a :Approach_Measurement ;
+    rdfs:label "Approach Measurement 139"^^xsd:string ;
+    skos:definition "A specific approach measurement test process for the Airbus A320 NEO, measuring approach performance under defined conditions."^^xsd:string ;
+    rdf:value "139"^^xsd:integer ;
+    :is_temporal_part_of :Test_Process_1 .
+
+:Approach_Measurement_139_5 a :Approach_Measurement ;
+    rdfs:label "Approach Measurement 139"^^xsd:string ;
+    skos:definition "A specific approach measurement test process for the Airbus A320 NEO, measuring approach performance under defined conditions."^^xsd:string ;
+    rdf:value "139"^^xsd:integer ;
+    :is_temporal_part_of :Test_Process_1 .
+
+:Airbus_A321_111_Spec :prescribes :Approach_Measurement_142 .
+
+
+
