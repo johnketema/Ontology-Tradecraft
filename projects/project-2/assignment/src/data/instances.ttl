@@ -47,7 +47,8 @@
 
 :Airbus_A321_111 a :Fixed_Wing ;
     rdfs:label "Airbus A321-111"^^xsd:string ;
-    skos:definition "A specific variant of the Airbus A321, featuring a single-aisle design and optimized for short to medium-haul flights."^^xsd:string .
+    skos:definition "A specific variant of the Airbus A321, featuring a single-aisle design and optimized for short to medium-haul flights."^^xsd:string ;
+    :prescribes :Approach_Measurement_142 .
 
 :Airbus_A321_111_Spec a :Artifact_Design ;
     rdfs:label "Airbus A321-111 Specification"^^xsd:string ;
@@ -103,7 +104,7 @@
     rdf:value "139"^^xsd:integer ;
     :is_temporal_part_of :Test_Process_1 .
 
-:Airbus_A321_111_Spec :prescribes :Approach_Measurement_142 .
+
 
 
 
