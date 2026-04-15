@@ -122,7 +122,7 @@
     rdfs:label "Aircraft Processing Act 1"^^xsd:string ;
     skos:definition "An act of processing an aircraft specification."^^xsd:string ;
     :realizes :Eval_1 ;
-    :is_about :Airbus_A320_NEO_Spec .
+    :is_about :Artifact_Design .
 
 :Eval_1 a :Adaptability_Evaluation ;
     rdfs:label "Adaptability Evaluation 1"^^xsd:string ;
