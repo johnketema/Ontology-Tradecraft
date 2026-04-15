@@ -144,4 +144,32 @@ BFO:0000015 a owl:Class ;
     rdfs:range :Approach_Measurement .
 
 
+#Task 3 - include `Act of Aircraft Processing`, `Adaptability Evaluation`, `is about`, `realizes`, `is output of`, `Artifact Design`, `inheres in`
+:Act_of_Aircraft_Processing a owl:Class ;
+    rdfs:label "Act of Aircraft Processing"^^xsd:string ;
+    skos:definition "A specific act that involves processing an aircraft, such as testing or evaluation."^^xsd:string ;
+    rdfs:subClassOf BFO:0000015 .  # BFO:0000015 represents 'Process' .
+
+:Adaptability_Evaluation a owl:Class ;
+    rdfs:label "Adaptability Evaluation"^^xsd:string ;
+    skos:definition "A realizable entity that assesses the adaptability of an aircraft to different conditions or requirements."^^xsd:string ;
+    rdfs:subClassOf BFO:0000017 . # BFO:0000017 represents 'Realizable Entity'
+
+:realizes a owl:ObjectProperty ;
+    rdfs:label "realizes"^^xsd:string ;
+    skos:definition "Relates a process to the entity it realizes."^^xsd:string .
+
+:is_output_of a owl:ObjectProperty ;
+    rdfs:label "is output of"^^xsd:string ;
+    skos:definition "Relates an entity to the process that produced it."^^xsd:string .
+
+:inheres_in a owl:ObjectProperty ;
+    rdfs:label "inheres in"^^xsd:string ;
+    skos:definition "Relates a dependent entity to the entity it depends on."^^xsd:string .
+
+
+
+
+
+
 
