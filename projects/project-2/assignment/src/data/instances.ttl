@@ -133,7 +133,7 @@
     :is_about :Artifact_Design_1 .
 
 :Artifact_Design_1 a :Artifact_Design ;
-    rdfs:label "Aircraft Design 1"^^xsd:string ;
+    rdfs:label "Aircraft Design"^^xsd:string ;
     skos:definition "A design artifact representing the specifications of an aircraft."^^xsd:string ;
     :is_about :Airbus_A320_NEO .
 
