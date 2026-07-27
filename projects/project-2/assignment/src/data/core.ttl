@@ -148,7 +148,8 @@ BFO:0000015 a owl:Class ;
 :Act_of_Aircraft_Processing a owl:Class ;
     rdfs:label "Act of Aircraft Processing"^^xsd:string ;
     skos:definition "A specific act that involves processing an aircraft, such as testing or evaluation."^^xsd:string ;
-    rdfs:subClassOf BFO:0000015 .  # BFO:0000015 represents 'Process' .
+    rdfs:subClassOf BFO:0000015 ;  # BFO:0000015 represents 'Process' 
+    :realizes :Adaptability_Evaluation .
 
 :Adaptability_Evaluation a owl:Class ;
     rdfs:label "Adaptability Evaluation"^^xsd:string ;
@@ -166,10 +167,3 @@ BFO:0000015 a owl:Class ;
 :inheres_in a owl:ObjectProperty ;
     rdfs:label "inheres in"^^xsd:string ;
     skos:definition "Relates a dependent entity to the entity it depends on."^^xsd:string .
-
-
-
-
-
-
-

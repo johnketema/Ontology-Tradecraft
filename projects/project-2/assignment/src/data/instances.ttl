@@ -5,6 +5,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix bfo: <http://purl.obolibrary.org/obo/> .
 
 <http://project2.org/ontology/instances>
     a owl:Ontology ;
@@ -106,27 +107,40 @@
 
 # Task 3 compliant instances
 
-:SOC_AE_1 a owl:Thing ;
-    rdfs:label "SOC: Aerospace Engineer - Systems"^^xsd:string ;
-    skos:definition "Standard Occupational Classification entry for aerospace engineers specialising in systems engineering."^^xsd:string .
+:17-2000 a bfo:BFO_0000031 ;
+    rdfs:label "SOC: Aerospace Engineers Broad Group"^^xsd:string ;
+    skos:definition "BLS Standard Occupational Classification (SOC) code for Aerospace Engineers, representing a broad group of professionals in the aerospace engineering field."^^xsd:string ;
+    :is_about :AerospaceEngineerRole .
 
-:SOC_AE_2 a owl:Thing ;
-    rdfs:label "SOC: Aerospace Engineer - Design"^^xsd:string ;
-    skos:definition "Standard Occupational Classification entry for aerospace engineers specialising in aircraft design."^^xsd:string .
+:17-2011 a bfo:BFO_0000031 ;
+    rdfs:label "SOC: Aerospace Engineers Detailed Group"^^xsd:string ;
+    skos:definition "BLS Standard Occupational Classification (SOC) code for Aerospace Engineers, representing a detailed group of professionals in the aerospace engineering field."^^xsd:string ;
+    :is_about :AerospaceEngineerRole .
 
-:SOC_AE_3 a owl:Thing ;
-    rdfs:label "SOC: Aerospace Engineer - Testing"^^xsd:string ;
-    skos:definition "Standard Occupational Classification entry for aerospace engineers specialising in flight testing."^^xsd:string .
+:17-3021 a bfo:BFO_0000031 ;
+    rdfs:label "SOC: Aerospace Engineering and Operations Technicians Detailed Group"^^xsd:string ;
+    skos:definition "BLS Standard Occupational Classification (SOC) code for a detailed group of Aerospace Engineering and Operations Technicians, representing professionals who assist in the design, development, and testing of aerospace products."^^xsd:string ;
+    :is_about :AerospaceEngineerRole .
+
+:AerospaceEngineerRole a bfo:BFO_0000023 ; # BFO_0000023 represents 'Role'
+    rdfs:label "Aerospace Engineer Role"^^xsd:string ;
+    skos:definition "A role representing the professional responsibilities and functions of an aerospace engineer."^^xsd:string .
 
 :ProcessingAct_1 a :Act_of_Aircraft_Processing ;
     rdfs:label "Aircraft Processing Act 1"^^xsd:string ;
     skos:definition "An act of processing an aircraft specification."^^xsd:string ;
     :realizes :Eval_1 ;
-    :is_about :Artifact_Design .
+    :is_about :Artifact_Design_1 .
+
+:Artifact_Design_1 a :Artifact_Design ;
+    rdfs:label "Aircraft Design 1"^^xsd:string ;
+    skos:definition "A design artifact representing the specifications of an aircraft."^^xsd:string ;
+    :is_about :Airbus_A320_NEO .
 
 :Eval_1 a :Adaptability_Evaluation ;
     rdfs:label "Adaptability Evaluation 1"^^xsd:string ;
-    skos:definition "An evaluation of the adaptability of the Airbus A320 NEO design."^^xsd:string .
+    skos:definition "An evaluation of the adaptability of the Airbus A320 NEO design."^^xsd:string ;
+    :inheres_in :Airbus_A320_NEO .
 
 :DesignOutput_1 a owl:Thing ;
     rdfs:label "Design Output 1"^^xsd:string ;
@@ -137,6 +151,7 @@
     rdfs:label "Adaptability Quality 1"^^xsd:string ;
     skos:definition "A quality of adaptability inhering in an aircraft design."^^xsd:string ;
     :inheres_in :Airbus_A320_NEO .
+
 
 
 
